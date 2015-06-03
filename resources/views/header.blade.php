@@ -1,6 +1,5 @@
 <header>
   <div class="row navbar-main">
-    <div class="container-fluid">
       <div class="col-md-3">
         <div class="dropdown">
           <button class="btn noti" id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -51,10 +50,8 @@
           <h4>Bienvenido, {{ Auth::user()->nombre }}</h4>
         </div>
       </div>
-    </div>
   </div>
   <div class="row navbar-user">
-    <div class="container-fluid">
       @if(Auth::user()->type === 'admin')
         <a href="" class="col-md-3 col-sm-3 col-xs-12"><i class="fa fa-check-square-o"></i> Consultas de Notas</a>
         <a href="{{ action('Admin\UsersController@create', 'alumno') }}" class="col-md-3 col-sm-3 col-xs-12 @if(Request::url() === action('Admin\UsersController@create', 'alumno')) active @endif">Registro de Alumnos</a>
@@ -64,9 +61,5 @@
         <a href="" class="col-md-3 col-sm-3 col-xs-12"><i class="fa fa-check-square-o"></i> Registar Notas</a>
         <a href="" class="col-md-3 col-sm-3 col-xs-12">Registro de Asistencias</a>
       @endif
-
-
-
-    </div>
   </div>
 </header>
