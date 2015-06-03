@@ -19,7 +19,7 @@ class UsersController extends Controller {
 
 	public function index()
 	{
-		//
+		return view('admin.user.index');
 	}
 
 	/**
@@ -31,13 +31,11 @@ class UsersController extends Controller {
 	{
 		switch ($type) {
 			case 'alumno':
-				return view('Admin.user.addForm',['type'=>'alumno']);
-			case 'docente':
-				return view('Admin.user.addForm',['type'=>'alumno']);
+				return view('admin.user.addForm',['type'=>'alumno']);
+			case 'profesor':
+				return view('admin.user.addForm',['type'=>'profesor']);
 			case 'admin':
-				return view('Admin.user.addForm',['type'=>'alumno']);
-			case 'asignatura':
-				return view('Admin.user.addForm',['type'=>'alumno']);
+				return view('admin.user.addForm',['type'=>'admin']);
 		}
 	}
 

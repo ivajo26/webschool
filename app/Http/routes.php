@@ -20,5 +20,6 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
-	Route::resource('users', 'UsersController');
+	Route::resource('users', 'UsersController',['except' => ['create']]);
+	Route::get('users/create/{type}', 'UsersController@create');
 });

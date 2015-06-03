@@ -1,0 +1,148 @@
+body{
+  background-color: #f6f6f6;
+}
+.row{
+  margin-right: 0px !important;
+}
+/*--NavBar Main--*/
+.navbar{
+    border: 0px !important;
+}
+
+.navbar-form{
+    margin-top: 13px !important;
+}
+
+.navbar-main{
+    background-color: #36a9e1;
+    margin-bottom: 0px;
+}
+
+.navbar-main .noti{
+    background-color: transparent;
+    font-size: 30px;
+    color: white;
+    padding: 0px;
+    margin-top: 12px;
+    margin-left: 14px;
+}
+
+.open .noti{
+    border-color: none !important;
+}
+
+.navbar-main .badge{
+    color: white;
+    background-color: #e55d5d;
+    margin-left: -10px;
+    position: absolute;
+    margin-top: 15px;
+}
+
+.navbar-main h4{
+  color: white;
+  margin-top: 24px;
+  margin-right: 10px;
+}
+
+    .navbar-main .form-control{
+      background-color: #36a9e1;
+      border-color: white;
+      color: white;
+      width: 240px !important;
+    }
+
+    .navbar-main .form-control::-webkit-input-placeholder { color: white;}
+    .navbar-main .form-control::-moz-placeholder { color: white; }
+
+    .navbar-main .btn-default{
+      background-color: white;
+      color: #36a9e1;
+      border-color: white;
+      width: 100%;
+    }
+
+    .navbar-main .dropdown-toggle{
+      background-color: #36a9e1;
+      color: white;
+      border-color: white;
+    }
+
+    .navbar-main  .open .dropdown-toggle{
+      background-color: white !important;
+      color: #36a9e1 !important;
+      border-color: white !important;
+    }
+
+    .navbar-main  .dropdown-menu a:hover{
+      background-color: #36a9e1 !important;
+    }
+
+    .navbar-main .profile{
+      text-align: right;
+      padding-right: 0px !important;
+    }
+    .navbar-main .profile h4{
+      display: inline-block;
+      margin-top: 0px;
+    }
+
+/*--NavBar User--*/
+
+.navbar-user{
+    background-color: #1d71b8;
+    margin-bottom: 1em;
+}
+
+.navbar-user a{
+  height: 70px;
+  color: white;
+  text-align: center;
+  line-height: 70px;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-color: white;
+  font-size: 1.2em;
+}
+
+.navbar-user a:hover{
+  text-decoration: none;
+  background-color: #f6f6f6;
+  color: #1d71b8;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-color: #1d71b8;
+}
+
+.navbar-user a.active{
+  background-color: #f6f6f6;
+  color: #1d71b8;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-color: #1d71b8;
+}
+
+/*--Admin Menu--*/
+
+.admin-menu div{
+  padding-left: 0px;
+  padding-right: 0px
+}
+
+.admin-menu .btn-default{
+  background-color: transparent;
+  color: #706f6f;
+  border-top-style: none;
+  border-bottom-style: none;
+  border-color: #706f6f;
+}
+
+.admin-menu .btn-default:hover{
+  background-color: #706f6f;
+  color: white;
+}
+
+.admin-menu .btn-default.activo{
+  background-color: #706f6f ;
+  color: white;
+}
