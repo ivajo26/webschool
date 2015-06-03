@@ -12,11 +12,11 @@ class CreateAsignaturasCursoTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('asisgnatura_curso', function(Blueprint $table)
+		Schema::create('asisgnatura_cursos', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->integer('curso_id')->unsigned();
-			$table->foreign('curso_id')->references('id')->on('curso')->onDelete('cascade');
+			$table->foreign('curso_id')->references('id')->on('cursos')->onDelete('cascade');
 			$table->timestamps();
 		});
 	}

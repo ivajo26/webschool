@@ -12,7 +12,7 @@ class CreateAsignaturaTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('asignatura', function(Blueprint $table)
+		Schema::create('asignaturas', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('nombre');

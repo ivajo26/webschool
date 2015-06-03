@@ -12,13 +12,13 @@ class CreateAsignaturasProfesorTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('asisgnatura_profesor', function(Blueprint $table)
+		Schema::create('asisgnatura_docentes', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('profesor_id')->unsigned();
-			$table->foreign('profesor_id')->references('id')->on('profesor')->onDelete('cascade');
+			$table->integer('docente_id')->unsigned();
+			$table->foreign('docente_id')->references('id')->on('docentes')->onDelete('cascade');
 			$table->integer('asignatura_id')->unsigned();
-			$table->foreign('asignatura_id')->references('id')->on('asignatura')->onDelete('cascade');
+			$table->foreign('asignatura_id')->references('id')->on('asignaturas')->onDelete('cascade');
 			$table->timestamps();
 		});
 	}

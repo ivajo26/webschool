@@ -1,25 +1,20 @@
-<?php namespace webschool\Http\Controllers\Admin;
+<?php namespace webschool\Http\Controllers;
 
 use webschool\Http\Requests;
 use webschool\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class UsersController extends Controller {
+class AsignaturasController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
-
 	public function index()
 	{
-		return view('admin.user.index');
+		return redirect('admin.asignatura.index');
 	}
 
 	/**
@@ -27,16 +22,9 @@ class UsersController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create($type)
+	public function create()
 	{
-		switch ($type) {
-			case 'alumno':
-				return view('admin.user.addForm',['type'=>'alumno']);
-			case 'profesor':
-				return view('admin.user.addForm',['type'=>'profesor']);
-			case 'admin':
-				return view('admin.user.addForm',['type'=>'admin']);
-		}
+		return view('admin.asignatura.create');
 	}
 
 	/**
@@ -44,10 +32,10 @@ class UsersController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(UserRequest $request)
+	public function store(AsignaturaRequest $request)
 	{
-		User::create($request->all());
-		return redirect('admin.user.index');
+		Asignatura::create($request->all());
+		return redirect('admin.asignatura.index');
 	}
 
 	/**

@@ -12,7 +12,7 @@ class CreateNotaTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('nota', function(Blueprint $table)
+		Schema::create('notas', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->decimal('taller', 2,1);

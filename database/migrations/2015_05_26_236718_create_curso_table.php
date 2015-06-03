@@ -12,7 +12,7 @@ class CreateCursoTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('curso', function(Blueprint $table)
+		Schema::create('cursos', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->enum('grado',['1','2','3','4','5','6','7','8','9','10','11']);
