@@ -16,8 +16,6 @@ class CreateCursoTable extends Migration {
 		{
 			$table->increments('id');
 			$table->enum('grado',['1','2','3','4','5','6','7','8','9','10','11']);
-			$table->integer('asignatura_id')->unsigned();
-			$table->foreign('asignatura_id')->references('id')->on('asignatura')->onDelete('cascade');
 			$table->timestamps();
 		});
 	}
