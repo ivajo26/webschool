@@ -124,6 +124,9 @@ body{
 
 /*--Admin Menu--*/
 
+.admin-menu{
+  margin-bottom: 40px;
+}
 .admin-menu div{
   padding-left: 0px;
   padding-right: 0px
@@ -146,3 +149,32 @@ body{
   background-color: #706f6f ;
   color: white;
 }
+
+/*-- Form User --*/
+
+.form-users{
+
+}
+
+  .form-users div{
+    margin-bottom: 10px;
+  }
+
+  .form-users input{
+    height: 3.5em;
+  }
+
+  .form-users .form-control{
+    background-color: transparent;
+    border-style: solid;
+    border-color: #706f6f;
+    border-width: 1px;
+  }
+
+  .form-users .form-control::-webkit-input-placeholder { font-size: 1.2em;}
+  .form-users .form-control::-moz-placeholder { font-size: 1.2em; }
+
+  .form-users .btn-default{
+    background-color: #36a9e1;
+    border-style: none !important;
+  }

@@ -30,7 +30,7 @@ class CreateAsignaturasProfesorTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('asisgnatura_profesor');
+		Schema::drop('asisgnatura_docentes');
 	}
 
 }

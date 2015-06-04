@@ -17,7 +17,7 @@
         <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <div class="input-group">
-            <input class="form-control" type="text" placeholder="Buscar Alumno y/o Profesor">
+            <input class="form-control" type="text" placeholder="Buscar Alumno y/o Docentes">
             <div class="input-group-btn">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                 Curso <i class="fa fa-plus"></i>
@@ -55,9 +55,9 @@
       @if(Auth::user()->type === 'admin')
         <a href="" class="col-md-3 col-sm-3 col-xs-12"><i class="fa fa-check-square-o"></i> Consultas de Notas</a>
         <a href="{{ action('Admin\UsersController@create', 'alumno') }}" class="col-md-3 col-sm-3 col-xs-12 @if(Request::url() === action('Admin\UsersController@create', 'alumno')) active @endif">Registro de Alumnos</a>
-        <a href="{{ action('Admin\UsersController@create', 'profesor') }}" class="col-md-3 col-sm-3 col-xs-12 @if(Request::url() === action('Admin\UsersController@create', 'profesor')) active @endif">Registro de Docentes</a>
+        <a href="{{ action('Admin\UsersController@create', 'docente') }}" class="col-md-3 col-sm-3 col-xs-12 @if(Request::url() === action('Admin\UsersController@create', 'docente')) active @endif">Registro de Docentes</a>
         <a href="" class="col-md-3 col-sm-3 col-xs-12">Registro de Asignaturas</a>
-      @elseif(Auth::user()->type === 'profesor')
+      @elseif(Auth::user()->type === 'docente')
         <a href="" class="col-md-3 col-sm-3 col-xs-12"><i class="fa fa-check-square-o"></i> Registar Notas</a>
         <a href="" class="col-md-3 col-sm-3 col-xs-12">Registro de Asistencias</a>
       @endif

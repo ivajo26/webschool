@@ -1,9 +1,13 @@
 <?php namespace webschool\Http\Controllers\Admin;
 
 use webschool\Http\Requests;
+use webschool\Http\Requests\UserRequest;
+//use webschool\Http\Requests\SearchRequest;
+use webschool\Http\Requests\AsignaturaRequest;
 use webschool\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use webschool\User;
 
 class UsersController extends Controller {
 
@@ -32,8 +36,8 @@ class UsersController extends Controller {
 		switch ($type) {
 			case 'alumno':
 				return view('admin.user.addForm',['type'=>'alumno']);
-			case 'profesor':
-				return view('admin.user.addForm',['type'=>'profesor']);
+			case 'docente':
+				return view('admin.user.addForm',['type'=>'docente']);
 			case 'admin':
 				return view('admin.user.addForm',['type'=>'admin']);
 		}
@@ -47,7 +51,7 @@ class UsersController extends Controller {
 	public function store(UserRequest $request)
 	{
 		User::create($request->all());
-		return redirect('admin.user.index');
+		return view('admin.user.index');
 	}
 
 	/**
