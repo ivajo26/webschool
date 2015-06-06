@@ -6,7 +6,7 @@
             <i class="fa fa-comments"></i><span class="badge">4</span>
           </button>
           <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-            <li><a href="#">Cerrar Sesión</a></li>
+            <li><a href="{{ url('/auth/logout') }}">Cerrar Sesión</a></li>
             <li class="divider"></li>
             <li role="presentation" class="dropdown-header">Notificaciones</li>
             <li><a href="#">Nueva Asignatura asignada</a></li>

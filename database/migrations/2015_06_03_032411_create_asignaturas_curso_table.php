@@ -17,6 +17,8 @@ class CreateAsignaturasCursoTable extends Migration {
 			$table->increments('id');
 			$table->integer('curso_id')->unsigned();
 			$table->foreign('curso_id')->references('id')->on('cursos')->onDelete('cascade');
+			$table->integer('asisgnatura_id')->unsigned();
+			$table->foreign('asisgnatura_id')->references('id')->on('asignaturas')->onDelete('cascade');
 			$table->timestamps();
 		});
 	}
@@ -28,7 +30,7 @@ class CreateAsignaturasCursoTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('asisgnatura_curso');
+		Schema::drop('asisgnatura_cursos');
 	}
 
 }
