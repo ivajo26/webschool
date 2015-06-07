@@ -1,60 +1,43 @@
-@extends('app')
+@extends('base')
+
+@section('title')
+	Login
+@endsection
+
+@section('style')
+	<link href="{{ asset('/css/signin.css') }}" rel="stylesheet">
+@endsection
 
 @section('content')
-<div class="container-fluid">
+<div class="container">
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Login</div>
-				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
-
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" name="remember"> Remember Me
-									</label>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">Login</button>
-
-								<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
-							</div>
-						</div>
-					</form>
-				</div>
+		@if (count($errors) > 0)
+			<div class="alert alert-danger">
+				<strong>Error!</strong> Se han presentado problema con tus datos:<br><br>
+				<ul>
+					@foreach ($errors->all() as $error)
+					<li>{{ $error }}</li>
+					@endforeach
+				</ul>
 			</div>
+		@endif
+	</div>
+	<div class="row">
+		<div class="col-md-5 logo">
+			<img src="{{ asset('img/logo.png') }}" alt="">
+		</div>
+		<div class="col-md-7">
+			{!! Form::open(array('url' => 'auth/login', 'method' => 'POST', 'class'=>'form-signin')) !!}
+				{!! Form::token() !!}
+				{!! Form::email('email',old('email'), array('placeholder'=>'Email', 'class'=>'form-control', 'autofocus')) !!}
+				{!! Form::password('password', array('placeholder'=>'Contraseña','class'=>'form-control')) !!}
+				{!! Form::submit('Ingresar', array('class'=>'btn btn-lg btn-primary btn-block')) !!}
+				<div class="checkbox">
+					<label>{!! Form::checkbox('remember','remember') !!} Remember	</label>
+					<label>{!! link_to('password/email', '¿Olvidastes tus datos?' )
+!!}</label>
+				</div>
+			{!! Form::close() !!}
 		</div>
 	</div>
 </div>

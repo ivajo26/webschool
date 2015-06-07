@@ -162,6 +162,7 @@ body{
 
   .form-users input{
     height: 60px;
+    font-size: 1em;
   }
 
   .form-users .form-control{
@@ -169,6 +170,8 @@ body{
     border-style: solid;
     border-color: #706f6f;
     border-width: 1px;
+    font-size: 1.3em;
+
   }
 
   .form-users .form-control::-webkit-input-placeholder { font-size: 1.2em;}
@@ -177,4 +180,30 @@ body{
   .form-users .btn-default{
     background-color: #36a9e1;
     border-style: none !important;
+    font-size: 1.5em;
+  }
+
+  .form-users select{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.5em;
+    height:  60px;
+    color: #706f6f;
+    background-color: #ededed !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+  }
+
+  .form-users option{
+    text-align: left;
+    font-weight: normal;
+    font-size: .8em;
+    background-color: white;
+    color: black !important;
+  }
+
+  .form-users option[selected] {
+    display: none;
   }
