@@ -1,7 +1,7 @@
 @extends('layouts.page')
 
 @section('title')
-  Asignar Curso
+  Asignar Asignatura
 @endsection
 
 @section('contenedor')

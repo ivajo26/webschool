@@ -4,9 +4,9 @@ use webschool\Http\Requests;
 use webschool\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use webschool\Asignatura;
+use webschool\Docente;
 
-class AsignaturasController extends Controller {
+class DocenteController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -15,7 +15,7 @@ class AsignaturasController extends Controller {
 	 */
 	public function index()
 	{
-		return redirect('admin.asignatura.index');
+		//
 	}
 
 	/**
@@ -25,7 +25,7 @@ class AsignaturasController extends Controller {
 	 */
 	public function create()
 	{
-		return view('admin.asignatura.create');
+		//
 	}
 
 	/**
@@ -33,10 +33,9 @@ class AsignaturasController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(AsignaturaRequest $request)
+	public function store()
 	{
-		Asignatura::create($request->all());
-		return redirect('admin.asignatura.index');
+		//
 	}
 
 	/**
