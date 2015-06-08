@@ -34,8 +34,7 @@
 				{!! Form::submit('Ingresar', array('class'=>'btn btn-lg btn-primary btn-block')) !!}
 				<div class="checkbox">
 					<label>{!! Form::checkbox('remember','remember') !!} Remember	</label>
-					<label>{!! link_to('password/email', '¿Olvidastes tus datos?' )
-!!}</label>
+					<label>{!! link_to('password/email', '¿Olvidastes tus datos?' )!!}</label>
 				</div>
 			{!! Form::close() !!}
 		</div>

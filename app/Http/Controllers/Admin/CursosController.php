@@ -4,9 +4,8 @@ use webschool\Http\Requests;
 use webschool\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use webschool\Docente;
 
-class DocentesController extends Controller {
+class CursosController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -15,7 +14,7 @@ class DocentesController extends Controller {
 	 */
 	public function index()
 	{
-		return view('admin.docente.index');
+		return view('admin.curso.index');
 	}
 
 	/**
@@ -25,7 +24,7 @@ class DocentesController extends Controller {
 	 */
 	public function create()
 	{
-		return view('admin.docente.asignar');
+		return view('admin.curso.asignar');
 	}
 
 	/**
