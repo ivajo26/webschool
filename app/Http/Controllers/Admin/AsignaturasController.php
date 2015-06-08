@@ -1,7 +1,8 @@
-<?php namespace webschool\Http\Controllers;
+<?php namespace webschool\Http\Controllers\Admin;
 
 use webschool\Http\Requests;
 use webschool\Http\Controllers\Controller;
+use webschool\Http\Requests\AsignaturaRequest;
 
 use Illuminate\Http\Request;
 use webschool\Asignatura;
@@ -36,7 +37,7 @@ class AsignaturasController extends Controller {
 	public function store(AsignaturaRequest $request)
 	{
 		Asignatura::create($request->all());
-		return redirect('admin.asignatura.index');
+		return view('admin.asignatura.index');
 	}
 
 	/**

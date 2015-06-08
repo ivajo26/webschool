@@ -18,4 +18,5 @@ Route::controllers([
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
 	Route::resource('users', 'UsersController',['except' => ['create']]);
 	Route::get('users/create/{type}', 'UsersController@create');
+	Route::resource('asignatura', 'AsignaturasController');
 });

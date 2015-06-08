@@ -56,7 +56,7 @@
         <a href="" class="col-md-3 col-sm-3 col-xs-12"><i class="fa fa-check-square-o"></i> Consultas de Notas</a>
         <a href="{{ action('Admin\UsersController@create', 'alumno') }}" class="col-md-3 col-sm-3 col-xs-12 @if(Request::url() === action('Admin\UsersController@create', 'alumno')) active @endif">Registro de Alumnos</a>
         <a href="{{ action('Admin\UsersController@create', 'docente') }}" class="col-md-3 col-sm-3 col-xs-12 @if(Request::url() === action('Admin\UsersController@create', 'docente')) active @endif">Registro de Docentes</a>
-        <a href="" class="col-md-3 col-sm-3 col-xs-12">Registro de Asignaturas</a>
+        <a href="{{ action('Admin\AsignaturasController@create') }}" class="col-md-3 col-sm-3 col-xs-12">Registro de Asignaturas</a>
       @elseif(Auth::user()->type === 'docente')
         <a href="" class="col-md-3 col-sm-3 col-xs-12"><i class="fa fa-check-square-o"></i> Registar Notas</a>
         <a href="" class="col-md-3 col-sm-3 col-xs-12">Registro de Asistencias</a>

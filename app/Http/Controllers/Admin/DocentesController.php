@@ -1,4 +1,4 @@
-<?php namespace webschool\Http\Controllers;
+<?php namespace webschool\Http\Controllers\Admin;
 
 use webschool\Http\Requests;
 use webschool\Http\Controllers\Controller;
@@ -6,7 +6,7 @@ use webschool\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use webschool\Docente;
 
-class DocenteController extends Controller {
+class DocentesController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
