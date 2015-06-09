@@ -1,6 +1,14 @@
 body{
   background-color: #f6f6f6;
 }
+
+h1, h3{
+  color: #706f6f;
+}
+
+h3{
+  font-weight: bolder;
+}
 .row{
   margin-right: 0px !important;
 }
@@ -208,7 +216,6 @@ body{
     -moz-appearance: none;
     appearance: none;
     border-color: #c1bfbf !important;
-
   }
 
   .form-users option{
@@ -223,6 +230,31 @@ body{
     display: none;
   }
 
+  .form-users label{
+    font-weight: normal;
+    height: 40px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #706f6f;
+    border-style: solid;
+    border-color: #706f6f;
+    margin: 0;
+    text-align: center;
+    line-height: 30px;
+  }
+
+  .docente .container div{
+    margin: 0;
+    padding: 0;
+  }
+
+  .docente select{
+    height: 40px;
+    background-color: transparent !important;
+    font-size: 1.2em !important;
+    padding-top: 0.3em;
+    border-color: #706f6f !important;
+  }
 /*--Mostrar Info --*/
 
 .panel{

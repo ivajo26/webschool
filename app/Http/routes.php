@@ -23,3 +23,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
 	Route::resource('docente', 'DocentesController');
 	Route::resource('curso', 'CursosController');
 });
+
+Route::group(['prefix' => 'docente', 'namespace' => 'Docente'], function(){
+	Route::resource('notas', 'NotasController');
+	Route::resource('asistencias', 'AsistenciasController');
+});

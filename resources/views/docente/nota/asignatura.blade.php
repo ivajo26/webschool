@@ -5,6 +5,17 @@
 @endsection
 
 @section('contenedor')
+<div class="row form-users docente">
+  <div class="container">
+    <div class="col-md-3">
+      {!! Form::label('asignatura', 'Seleccione Asignatura', array('class'=>'btn-block')) !!}
+    </div>
+    <div class="col-md-9">
+      {!! Form::select('asignatura', array('' => '+ Asignar Asignatura', '1' => 'Matematicas', '2' => 'Sociales', '3' => 'Español', '4' => 'Naturales'),'',array('class'=>'form-control')) !!}
+    </div>
+  </div>
+</div>
+
 <div class="container">
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <div class="row panel-heading">

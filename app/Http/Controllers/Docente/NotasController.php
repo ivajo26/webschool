@@ -1,13 +1,11 @@
-<?php namespace webschool\Http\Controllers\Admin;
+<?php namespace webschool\Http\Controllers\Docente;
 
 use webschool\Http\Requests;
 use webschool\Http\Controllers\Controller;
-use webschool\Http\Requests\AsignaturaRequest;
 
 use Illuminate\Http\Request;
-use webschool\Asignatura;
 
-class AsignaturasController extends Controller {
+class NotasController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -21,7 +19,7 @@ class AsignaturasController extends Controller {
 	
 	public function index()
 	{
-		return redirect('admin.asignatura.index');
+		return view('docente.nota.asignatura');
 	}
 
 	/**
@@ -31,7 +29,7 @@ class AsignaturasController extends Controller {
 	 */
 	public function create()
 	{
-		return view('admin.asignatura.create');
+		//
 	}
 
 	/**
@@ -39,10 +37,9 @@ class AsignaturasController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(AsignaturaRequest $request)
+	public function store()
 	{
-		Asignatura::create($request->all());
-		return view('admin.asignatura.index');
+		//
 	}
 
 	/**

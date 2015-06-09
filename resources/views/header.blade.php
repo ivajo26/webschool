@@ -58,8 +58,8 @@
         <a href="{{ action('Admin\DocentesController@create') }}" class="col-md-3 col-sm-3 col-xs-12 @if(Request::url() === action('Admin\UsersController@create', 'docente') OR Request::url() === action('Admin\DocentesController@create')) active @endif">Registro de Docentes</a>
         <a href="{{ action('Admin\CursosController@create') }}" class="col-md-3 col-sm-3 col-xs-12 @if(Request::url() === action('Admin\CursosController@create') OR Request::url() === action('Admin\AsignaturasController@create')) active @endif">Registro de Asignaturas</a>
       @elseif(Auth::user()->type === 'docente')
-        <a href="" class="col-md-3 col-sm-3 col-xs-12"><i class="fa fa-check-square-o"></i> Registar Notas</a>
-        <a href="" class="col-md-3 col-sm-3 col-xs-12">Registro de Asistencias</a>
+        <a href="{{ action('Docente\NotasController@index') }}" class="col-md-3 col-sm-3 col-xs-12 @if(Request::url() === action('Docente\NotasController@index')) active @endif"><i class="fa fa-check-square-o"></i> Registar Notas</a>
+        <a href="{{ action('Docente\AsistenciasController@index') }}" class="col-md-3 col-sm-3 col-xs-12 @if(Request::url() === action('Docente\AsistenciasController@index')) active @endif">Registro de Asistencias</a>
       @endif
   </div>
 </header>
