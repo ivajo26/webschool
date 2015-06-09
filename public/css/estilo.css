@@ -196,7 +196,7 @@ body{
   .form-users .btn-primary:hover{
     color: black;
   }
-  
+
   .form-users select{
     text-align: center;
     font-weight: bolder;
@@ -207,6 +207,7 @@ body{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    border-color: #c1bfbf !important;
 
   }
 
@@ -221,3 +222,30 @@ body{
   .form-users option[selected] {
     display: none;
   }
+
+/*--Mostrar Info --*/
+
+.panel{
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: 0px 1px 0px rgb(112, 111, 111) !important;
+}
+
+.panel-default{
+  border-color: transparent !important;
+  color: #706f6f;
+}
+
+.panel-default > .panel-heading{
+  background-color: none !important;
+  color: #706f6f;
+}
+
+.panel-heading h3{
+  font-weight: bold;
+  color: #706f6f;
+}
+
+.panel-title h3{
+  margin: 0;
+}
