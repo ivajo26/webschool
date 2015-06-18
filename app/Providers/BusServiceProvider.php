@@ -1,4 +1,4 @@
-<?php namespace webschool\Providers;
+<?php namespace Webschool\Providers;
 
 use Illuminate\Bus\Dispatcher;
 use Illuminate\Support\ServiceProvider;
@@ -16,7 +16,7 @@ class BusServiceProvider extends ServiceProvider {
 		$dispatcher->mapUsing(function($command)
 		{
 			return Dispatcher::simpleMapping(
-				$command, 'webschool\Commands', 'webschool\Handlers\Commands'
+				$command, 'Webschool\Commands', 'Webschool\Handlers\Commands'
 			);
 		});
 	}

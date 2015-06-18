@@ -1,17 +1,15 @@
-@extends('app')
+@extends ('base')
 
-@section('content')
-<div class="container">
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-			<div class="panel panel-default">
-				<div class="panel-heading">Home</div>
+@section ('title')
+	{{ Auth::user()->type }}	
+@endsection
 
-				<div class="panel-body">
-					You are logged in!
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+@section ('content')
+	@if (Auth::user()->type == "admin")
+		@include ('Admin.index')
+	@elseif (Auth::user()->type == "docente")
+		@include ('Docente.index')
+	@elseif (Auth::user()->type == "alumno")
+		@include ('Alumno.index')
+	@endif
 @endsection

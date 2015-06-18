@@ -1,6 +1,6 @@
-<?php namespace webschool\Http\Requests;
+<?php namespace Webschool\Http\Requests;
 
-use webschool\Http\Requests\Request;
+use Webschool\Http\Requests\Request;
 
 class UserRequest extends Request {
 

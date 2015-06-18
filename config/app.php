@@ -140,11 +140,11 @@ return [
 		/*
 		 * Application Service Providers...
 		 */
-		'webschool\Providers\AppServiceProvider',
-		'webschool\Providers\BusServiceProvider',
-		'webschool\Providers\ConfigServiceProvider',
-		'webschool\Providers\EventServiceProvider',
-		'webschool\Providers\RouteServiceProvider',
+		'Webschool\Providers\AppServiceProvider',
+		'Webschool\Providers\BusServiceProvider',
+		'Webschool\Providers\ConfigServiceProvider',
+		'Webschool\Providers\EventServiceProvider',
+		'Webschool\Providers\RouteServiceProvider',
 
 	],
 

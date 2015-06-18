@@ -1,4 +1,4 @@
-<?php namespace webschool\Http\Controllers;
+<?php namespace Webschool\Http\Controllers;
 
 class HomeController extends Controller {
 

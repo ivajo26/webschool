@@ -1,4 +1,4 @@
-<?php namespace webschool\Providers;
+<?php namespace Webschool\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

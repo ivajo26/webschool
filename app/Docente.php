@@ -1,4 +1,4 @@
-<?php namespace webschool;
+<?php namespace Webschool;
 
 use Illuminate\Database\Eloquent\Model;
 

@@ -1,4 +1,4 @@
-<?php namespace webschool\Http\Middleware;
+<?php namespace Webschool\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
@@ -40,7 +40,7 @@ class Authenticate {
 			}
 			else
 			{
-				return redirect()->guest('auth/login');
+				return redirect()->guest('login');
 			}
 		}
 

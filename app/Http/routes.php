@@ -10,21 +10,11 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::get('/', 'HomeController@index');
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
-	Route::resource('users', 'UsersController',['except' => ['create']]);
-	Route::get('users/create/{type}', 'UsersController@create');
-	Route::resource('asignatura', 'AsignaturasController');
-	Route::resource('alumno', 'AlumnosController');
-	Route::resource('docente', 'DocentesController');
-	Route::resource('curso', 'CursosController');
-});
+Route::get('/login','Auth\AuthController@getLogin');
+Route::post('/login','Auth\AuthController@postLogin');
+Route::get('/logout','Auth\AuthController@getLogout');
 
-Route::group(['prefix' => 'docente', 'namespace' => 'Docente'], function(){
-	Route::resource('notas', 'NotasController');
-	Route::resource('asistencias', 'AsistenciasController');
-});
+Route::get('/add/{type}','AdminController@newUser');   
+Route::post('/add/{type}','AdminController@postStoreUser');

@@ -1,4 +1,4 @@
-<?php namespace webschool\Http\Middleware;
+<?php namespace Webschool\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
@@ -35,13 +35,7 @@ class RedirectIfAuthenticated {
 	{
 		if ($this->auth->check())
 		{
-			if($this->auth->user()->type == 'admin'){
-				return new RedirectResponse(url('/admin/users'));
-			}
-
-			if($this->auth->user()->type == 'docente'){
-				return new RedirectResponse(url('/docente/notas'));
-			}
+			return new RedirectResponse(url('/'));
 		}
 
 		return $next($request);

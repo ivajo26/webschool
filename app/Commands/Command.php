@@ -1,4 +1,4 @@
-<?php namespace webschool\Commands;
+<?php namespace Webschool\Commands;
 
 abstract class Command {
 

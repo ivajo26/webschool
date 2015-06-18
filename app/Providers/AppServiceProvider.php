@@ -1,4 +1,4 @@
-<?php namespace webschool\Providers;
+<?php namespace Webschool\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider {
 	{
 		$this->app->bind(
 			'Illuminate\Contracts\Auth\Registrar',
-			'webschool\Services\Registrar'
+			'Webschool\Services\Registrar'
 		);
 	}
 

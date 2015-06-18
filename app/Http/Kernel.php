@@ -1,4 +1,4 @@
-<?php namespace webschool\Http;
+<?php namespace Webschool\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -15,7 +15,7 @@ class Kernel extends HttpKernel {
 		'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
 		'Illuminate\Session\Middleware\StartSession',
 		'Illuminate\View\Middleware\ShareErrorsFromSession',
-		'webschool\Http\Middleware\VerifyCsrfToken',
+		'Webschool\Http\Middleware\VerifyCsrfToken',
 	];
 
 	/**
@@ -24,9 +24,9 @@ class Kernel extends HttpKernel {
 	 * @var array
 	 */
 	protected $routeMiddleware = [
-		'auth' => 'webschool\Http\Middleware\Authenticate',
+		'auth' => 'Webschool\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-		'guest' => 'webschool\Http\Middleware\RedirectIfAuthenticated',
+		'guest' => 'Webschool\Http\Middleware\RedirectIfAuthenticated',
 	];
 
 }

@@ -1,4 +1,4 @@
-<?php namespace webschool;
+<?php namespace Webschool;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -22,7 +22,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['nombre', 'apellido', 'identificacion', 'email', 'estado', 'password', 'type'];
+	protected $fillable = ['nombre','apellido','identificacion', 'email', 'estado', 'password', 'type'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -30,12 +30,5 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * @var array
 	 */
 	protected $hidden = ['password', 'remember_token'];
-
-	public function setPasswordAttribute($value){
-
-			$this->attributes['password'] = \Hash::make($value);
-
-
-	}
 
 }
