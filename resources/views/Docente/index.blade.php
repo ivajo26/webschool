@@ -15,4 +15,6 @@
   			<div class="col-md-6">
   				{!! Form::submit('Buscar',['class' => 'btn btn-default btn-block']) !!}
   			</div>
+      </div>
+  </div>
 @endsection

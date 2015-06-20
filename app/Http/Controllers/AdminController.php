@@ -6,6 +6,8 @@ use Webschool\Http\Requests\UserRequest;
 use Webschool\Http\Requests\AsignaturaRequest;
 use Webschool\Http\Requests\EstudianteRequest;
 use Webschool\Http\Requests\AsignacionCargasRequest;
+use Webschool\Http\Requests\AsignaturaUpdateRequest;
+use Webschool\Http\Requests\UpdateUserRequest;
 use Illuminate\Http\Request;
 use Webschool\User;
 use Webschool\Asignatura;
@@ -15,6 +17,8 @@ use Webschool\Grado;
 use Webschool\AsignacionDocenteAsignatura;
 
 class AdminController extends Controller {
+
+	// ------------ USUARIOS --------------------
 
 	public function asignarEstudiante(){
 		$cursos = Grado::all();
@@ -45,7 +49,7 @@ class AdminController extends Controller {
 			'grado_id' => $grado_id
 			);
 		Estudiante::create($data);
-		return redirect('/');
+		return redirect('/asignar/estudiante');
 	}
 
 
@@ -85,8 +89,82 @@ class AdminController extends Controller {
 
 		if ($type == "docente") {
 			Docente::create(['user_id' => $identificacion]);
+			return redirect('/asignar/cargas');
 		}
+		return redirect('/asignar/estudiante');
+		
+	}
+
+	public function activateUser($id){
+		$usuario = User::where('identificacion',$id)->first();
+		if ($usuario->estado) {
+			User::where('identificacion',$id)->update(['estado' => false]);
+		}elseif (!$usuario->estado) {
+			User::where('identificacion',$id)->update(['estado' => true]);
+		}
+
 		return redirect('/');
+	}
+
+	public function editUser($id){
+		$usuario = User::where('identificacion',$id)->first();
+		return view('Admin.editUsuario',['usuario' => $usuario]);
+	}
+
+	public function updateUser($id, UpdateUserRequest $request){
+		$nombre = $request->input('nombre');
+		$apellido = $request->input('apellido');
+		$identificacion = $id;
+		$email = $request->input('email');
+		$type = $request->input('type');
+		$edad = $request->input('edad');
+		$genero = $request->input('genero');
+
+		$data = array(
+			'nombre' => $nombre,
+			'apellido' => $apellido,
+			'identificacion' => $identificacion,
+			'email' => $email,
+			'type' => $type,
+			'edad' => $edad,
+			'genero' => $genero,
+			);
+
+		User::where('identificacion',$id)->update($data);
+
+		return redirect('/');
+		
+
+	}
+
+	//-----------------Asignaturas -------------------------------
+
+	public function getAsignatura(){
+		$asignaturas = Asignatura::orderby('estado','DESC')->get();
+		return view('Admin.getAsignaturas',['asignaturas' => $asignaturas]);
+	}
+
+	public function activateAsignatura($id){
+		$asignatura = Asignatura::where('id',$id)->first();
+		
+
+		if ($asignatura->estado) {
+			Asignatura::where('id',$id)->update(['estado' => false]);
+		}elseif (!$asignatura->estado) {
+			Asignatura::where('id',$id)->update(['estado' => true]);
+		}
+		return redirect('/asignaturas');
+	}
+
+	public function editAsignatura($id){
+		$asignaturas = Asignatura::findOrFail($id);
+		return view('Admin.editAsignatura',['asignaturas' => $asignaturas]);
+	}
+
+	public function postUpdateAsignatura($id, AsignaturaUpdateRequest $request){
+		$nombre = $request->input('nombre');
+		Asignatura::where('id',$id)->update(['nombre' => $nombre]);
+		return redirect('/asignaturas');
 	}
 
 	public function newAsignatura(){
@@ -95,7 +173,7 @@ class AdminController extends Controller {
 
 	public function postNewAsignatura(AsignaturaRequest $request){
 		Asignatura::create($request->all());
-		return redirect('/');
+		return redirect('/nueva/asignatura');
 	}
 
 
@@ -129,7 +207,7 @@ class AdminController extends Controller {
 			'grado_id' => $grado_id
 			); 
 		AsignacionDocenteAsignatura::create($data);
-		return redirect('/');
+		return redirect('/asignar/cargas');
 	}
 
 

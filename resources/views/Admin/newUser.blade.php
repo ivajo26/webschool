@@ -10,6 +10,8 @@
 
 @section ('content')
 	@include ('header')
-	@include ('Admin.addForm')
+	{!! Form::open(['action'=>'AdminController@postStoreUser']) !!}
+		@include ('Admin.addForm')
+	{!! Form::close() !!}
 	@include ('errors.valuesRequire')
 @endsection

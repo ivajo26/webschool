@@ -10,7 +10,7 @@
       </div>
 
       <div class="col-md-6">
-        {!! Form::text('identificacion',null, ['placeholder' => 'Numero de Identificacion', 'class' => 'form-control']) !!}
+        {!! Form::text('identificacion',null, ['disabled','placeholder' => 'Numero de Identificacion', 'class' => 'form-control']) !!}
       </div>
 
       <div class="col-md-6">
@@ -18,7 +18,7 @@
       </div>
 
       <div class="col-md-6">
-        {!! Form::password('password',array('placeholder' => 'Contraseña', 'class' => 'form-control')) !!}
+        {!! Form::password('password',array('disabled','placeholder' => 'Contraseña', 'class' => 'form-control')) !!}
       </div>
 
       <div class="col-md-6">
