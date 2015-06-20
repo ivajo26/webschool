@@ -2,8 +2,8 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class AsignaturaDocente extends Model {
+class Grado extends Model {
 
-	//
+	protected $fillable = ['grado'];
 
 }

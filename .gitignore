@@ -1,3 +1,6 @@
 /vendor
+!/vendor/laravel/src/Illuminate/Auth/
+!/vendor/laravel/src/Illuminate/Contracts/Auth/
+!/vendor/laravel/src/Illuminate/Foundation/Auth/*
 /node_modules
 .env

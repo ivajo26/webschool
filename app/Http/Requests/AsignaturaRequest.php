@@ -2,7 +2,7 @@
 
 use Webschool\Http\Requests\Request;
 
-class UserRequest extends Request {
+class AsignaturaRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -22,14 +22,7 @@ class UserRequest extends Request {
 	public function rules()
 	{
 		return [
-			'nombre' => 'required',
-			'apellido' => 'required',
-			'identificacion' => 'required|unique:users',
-			'email' => 'required',
-			'password' => 'required',
-			'type' => 'required',
-			'genero' => 'required',
-			'edad' => 'required'
+			'nombre' => 'required|unique:asignaturas|min:5'
 		];
 	}
 

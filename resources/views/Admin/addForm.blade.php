@@ -1,7 +1,7 @@
 <div class="row form-users">
   <div class="container">
 
-    {!! Form::open() !!}
+    {!! Form::open(['action'=>'AdminController@postStoreUser']) !!}
 
       <div class="col-md-6">
         {!! Form::text('nombre',null, ['placeholder' => 'Nombre', 'class' => 'form-control']) !!}
@@ -24,10 +24,16 @@
       </div>
 
       <div class="col-md-6">
-        {!! Form::submit('Registrar '.$type ,['class' => 'btn btn-default btn-block']) !!}
+        {!! Form::input('number','edad',null,['placeholder' => 'Edad', 'class' => 'form-control']) !!}
+      </div>
+      
+      <div class="col-md-6">
+        {!! Form::select('genero',['' => 'Ingrese su genero','masculino' => 'Masculino', 'femenino' => 'Femenino'],null,['class' => 'form-control']) !!}
       </div>
 
-      {!! Form::hidden('estado',1) !!}
+      <div class="col-md-6">
+        {!! Form::submit('Registrar '.$type ,['class' => 'btn btn-default btn-block']) !!}
+      </div>
 
       {!! Form::hidden('type',$type) !!}
 

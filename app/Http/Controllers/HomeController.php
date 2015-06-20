@@ -1,5 +1,6 @@
 <?php namespace Webschool\Http\Controllers;
 
+
 class HomeController extends Controller {
 
 	/*

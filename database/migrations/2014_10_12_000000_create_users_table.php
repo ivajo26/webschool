@@ -18,10 +18,12 @@ class CreateUsersTable extends Migration {
 			$table->string('nombre');
 			$table->string('apellido');
 			$table->integer('identificacion')->unsigned()->unique();
-			$table->string('email');
-			$table->boolean('estado');
+			$table->string('email')->unique();
 			$table->string('password', 60);
-			$table->enum('type',['admin','docente','alumno']);
+			$table->enum('type',['admin','docente','estudiante']);
+			$table->boolean('estado')->default(true);
+			$table->enum('genero',['masculino','femenino']);
+			$table->unsignedInteger('edad');
 			$table->rememberToken();
 			$table->timestamps();
 		});

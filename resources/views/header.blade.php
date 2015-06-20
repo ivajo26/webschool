@@ -12,7 +12,7 @@
             <li><a href="#">Nueva Asignatura asignada</a></li>
           </ul>
         </div>
-      </div>
+      </div>  
       <div class="col-md-6">
         <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
@@ -37,15 +37,17 @@
   <div class="row navbar-user">
       @if(Auth::user()->type === 'admin')
         <a href="" class="col-md-3 col-sm-3 col-xs-12"><i class="fa fa-check-square-o"></i> Consultas de Notas</a>
-        <a href="{{ action('AdminController@newUser', 'alumno') }}"class="col-md-3 col-sm-3 col-xs-12 @if(Request::url() === action('AdminController@newUser', 'alumno')) active @endif">
-          Registro de Alumnos
+        <a href="{{ action('AdminController@asignarEstudiante') }}"class="col-md-3 col-sm-3 col-xs-12 @if(Request::url() === action('AdminController@asignarEstudiante') OR Request::url() === action('AdminController@newUser','estudiante')) active @endif">
+           Estudiantes
         </a>
-        <a href="{{ action('AdminController@newUser', 'docente') }}" class="col-md-3 col-sm-3 col-xs-12 @if(Request::url() === action('AdminController@newUser', 'docente')) active @endif ">
-          Registro de Docentes
+        <a href="{{ action('AdminController@asignarCargas') }}" class="col-md-3 col-sm-3 col-xs-12 @if(Request::url() === action('AdminController@newUser', 'docente') OR Request::url() === action('AdminController@newUser'))  active @endif ">
+           Docentes
         </a>
-        <a href="" class="col-md-3 col-sm-3 col-xs-12 ">Registro de Asignaturas</a>
+        <a href="{{ action('AdminController@newAsignatura') }}" class="col-md-3 col-sm-3 col-xs-12  @if(Request::url() === action('AdminController@newAsignatura')) active @endif">
+          Nueva Asignatura
+        </a>
       @elseif(Auth::user()->type === 'docente')
-        <a href="" class="col-md-3 col-sm-3 col-xs-12 "><i class="fa fa-check-square-o"></i> Registar Notas</a>
+        <a href="{{ action('DocenteController@getCursos') }}" class="col-md-3 col-sm-3 col-xs-12 "><i class="fa fa-check-square-o"></i> Registar Notas</a>
         <a href="" class="col-md-3 col-sm-3 col-xs-12 ">Registro de Asistencias</a>
       @endif
   </div>

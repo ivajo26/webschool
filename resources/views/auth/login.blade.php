@@ -27,7 +27,8 @@
 		<div class="col-md-7">
 			{!! Form::open(['action' => 'Auth\AuthController@postLogin', 'class' => 'form-signin']) !!}
 				{!! Form::token() !!}
-				{!! Form::text('identificacion',old('identificacion'), array('placeholder'=>'Identificacion', 'class'=>'form-control', 'autofocus')) !!}
+				{!! Form::text('identificacion',old('identificacion'), array('placeholder'=>'Identificacion', 
+				'class'=>'form-control', 'autofocus')) !!}
 				{!! Form::password('password', array('placeholder'=>'Contraseña','class'=>'form-control')) !!}
 				{!! Form::submit('Ingresar', array('class'=>'btn btn-lg btn-primary btn-block')) !!}
 			{!! Form::close() !!}

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDocentesTable extends Migration {
+class CreateGradosTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,10 @@ class CreateDocentesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('docentes', function(Blueprint $table)
+		Schema::create('grados', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('user_id')->unsigned();
-			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+			$table->enum('grado',['1','2','3','4','5','6','7','8','9','10','11']);
 			$table->timestamps();
 		});
 	}
@@ -28,7 +27,7 @@ class CreateDocentesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('docentes');
+		Schema::drop('grados');
 	}
 
 }
