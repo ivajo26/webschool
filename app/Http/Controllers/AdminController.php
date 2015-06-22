@@ -23,7 +23,7 @@ class AdminController extends Controller {
 	public function asignarEstudiante(){
 		$cursos = Grado::all();
 
-		$users = User::where('type','estudiante')->get();
+		$users = User::where('type','estudiante')->where('estado',true)->get();
 
 		$cursosA = array();
 		$usersA = array();
@@ -176,11 +176,13 @@ class AdminController extends Controller {
 		return redirect('/nueva/asignatura');
 	}
 
+	//--------------Asignacion de cargas ------------------
+
 
 	public function asignarCargas(){
 		$grados = Grado::all();
 		$asignaturas = Asignatura::where('estado',true)->get();
-		$docentes = User::where('type','docente')->get();
+		$docentes = User::where('type','docente')->where('estado',true)->get();
 		$gradosA = array();
 		$asignaturasA = array();
 		$docentesA = array();

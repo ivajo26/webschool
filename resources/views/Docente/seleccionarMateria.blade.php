@@ -11,12 +11,24 @@
 @section ('content')
 	@include ('header')
 	<div class="container">
-		<div class="row">
-			@foreach ($todo as $key)
-				<div class="col-md-2">
-					<a href="" class="btn btn-primary">{{ $key->nombre }} Grado {{ $key->grado_id }}</a> 
-				</div>
-			@endforeach	
-		</div>
+		<table class="table table-striped table-responsive table-hover ">
+			<tr>
+				<td>Grado</td>
+				<td>Asignatura</td>
+				<td></td>
+			</tr>
+			@foreach ($datos as $fila)
+				<tr>
+					<td>{{ $fila->grado_id }}</td>
+					<td>{{ $fila->nombre }}</td>
+					{!! Form::open(['action' => 'DocenteController@postCursos']) !!}
+					{!! Form::hidden('materia_grado',$fila->grado_id) !!}
+					{!! Form::hidden('ada_id',$fila->id) !!}
+					<td>{!! Form::submit('Ingresar Notas',['class' => 'btn btn-primary']) !!}</td>
+					{!! Form::close() !!}
+				</tr>
+			@endforeach
+		</table>
 	</div>
+	@include ('errors.valuesRequire')
 @endsection

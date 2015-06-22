@@ -10,6 +10,9 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
+//------------ Admin Routes ----------------------
+
 Route::get('/', 'HomeController@index');
 Route::post('/', 'SearchController@postSearch');
 
@@ -41,5 +44,11 @@ Route::patch('/asignatura/{id}/edit','AdminController@postUpdateAsignatura');
 Route::get('/nueva/asignatura','AdminController@newAsignatura');   
 Route::post('/nueva/asignatura','AdminController@postNewAsignatura');    
 
+// ------------------ Docente Routes ------------------------------
 
-Route::get('/registrar_notas/','DocenteController@getCursos');
+Route::get('/seleccionar/materias','DocenteController@getCursos');
+
+Route::get('/mostrar/estudiantes','DocenteController@postCursos');
+Route::post('/mostrar/estudiantes','DocenteController@postCursos');
+
+Route::post('/registrar/notas','DocenteController@postRegistrarNotas');
