@@ -8,8 +8,7 @@
 
 ## Implementacion
 
-# Nota: la implementacion que se da a continuacion es la configuracion de forma local de la plataforma WebSchool en 
-	Gnu/Linux
+# Nota: la implementacion que se da a continuacion es la configuracion de forma local de la plataforma WebSchool en Gnu/Linux
 
 
 
