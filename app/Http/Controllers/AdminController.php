@@ -18,12 +18,12 @@ use Webschool\AsignacionDocenteAsignatura;
 
 class AdminController extends Controller {
 
-	// ------------ USUARIOS --------------------
+	// ------------ USUARIOS --------------------//
 
 	public function asignarEstudiante(){
 		$cursos = Grado::all();
 
-		$users = User::where('type','estudiante')->where('estado',true)->get();
+		$users = User::latest()->where('type','estudiante')->where('estado',true)->get();
 
 		$cursosA = array();
 		$usersA = array();
@@ -33,8 +33,12 @@ class AdminController extends Controller {
 			
 		}
 		
-		foreach ($users as $key) {
-			$usersA[$key->identificacion] = $key->nombre;
+		if (!$users->isEmpty()) {
+			foreach ($users as $key) {
+				$usersA[$key->identificacion] = $key->nombre." ".$key->apellido;
+			}
+		}else{
+			$usersA['no_matches'] = 'No results';
 		}
 
 
@@ -137,7 +141,7 @@ class AdminController extends Controller {
 
 	}
 
-	//-----------------Asignaturas -------------------------------
+	//-----------------Asignaturas -------------------------------//
 
 	public function getAsignatura(){
 		$asignaturas = Asignatura::orderby('estado','DESC')->get();
@@ -176,24 +180,34 @@ class AdminController extends Controller {
 		return redirect('/nueva/asignatura');
 	}
 
-	//--------------Asignacion de cargas ------------------
+	//--------------Asignacion de cargas ------------------//
 
 
 	public function asignarCargas(){
 		$grados = Grado::all();
 		$asignaturas = Asignatura::where('estado',true)->get();
-		$docentes = User::where('type','docente')->where('estado',true)->get();
+		$docentes = User::latest()->where('type','docente')->where('estado',true)->get();
 		$gradosA = array();
 		$asignaturasA = array();
 		$docentesA = array();
 		foreach ($grados as $key) {
 			$gradosA[$key->id] = $key->grado;
 		}
-		foreach ($asignaturas as $key) {
-			$asignaturasA[$key->id] = $key->nombre;
+
+		if (!$asignaturas->isEmpty()) {
+			foreach ($asignaturas as $key) {
+				$asignaturasA[$key->id] = $key->nombre;
+			}
+		}else{
+			$asignaturasA['no_result'] = 'No results';
 		}
-		foreach ($docentes as $key) {
-			$docentesA[$key->identificacion] = $key->nombre.' '.$key->apellido;
+
+		if (!$docentes->isEmpty()) {
+			foreach ($docentes as $key) {
+				$docentesA[$key->identificacion] = $key->nombre.' '.$key->apellido;
+			}
+		}else{
+			$docentesA['no_result'] = 'No results';
 		}
 
 		return view('Admin.AsignarCargas',['grados' => $gradosA,'asignaturas' => $asignaturasA,'docentes' => $docentesA]);

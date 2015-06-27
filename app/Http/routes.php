@@ -52,3 +52,10 @@ Route::get('/mostrar/estudiantes','DocenteController@postCursos');
 Route::post('/mostrar/estudiantes','DocenteController@postCursos');
 
 Route::post('/registrar/notas','DocenteController@postRegistrarNotas');
+
+Route::post('/search/asignaturas','SearchController@postMateriaSearch');
+
+// ------------------ Estudiante Routes ------------------------------
+
+Route::get('/notas','EstudianteController@index');
+Route::get('/info/asignaturas', 'EstudianteController@infoAsignaturas');

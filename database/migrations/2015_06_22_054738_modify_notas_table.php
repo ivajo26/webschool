@@ -19,10 +19,10 @@ class ModifyNotasTable extends Migration {
 			$table->unsignedInteger('ada_id');
 			$table->foreign('ada_id')->references('id')->on('asignacion_docente_asignaturas')->onDelte('cascade');
 			$table->text('estudiante_id');
-			$table->decimal('periodo_1',2,1);
-			$table->decimal('periodo_2',2,1);
-			$table->decimal('periodo_3',2,1);
-			$table->decimal('nota_final',2,1);
+			$table->decimal('periodo_1',2,1)->nullable();
+			$table->decimal('periodo_2',2,1)->nullable();
+			$table->decimal('periodo_3',2,1)->nullable();
+			$table->decimal('nota_final',2,1)->nullable();
 			$table->timestamps();
 		});
 	}

@@ -12,7 +12,7 @@
   @include ('header')
     <div class="row form-users">
     <div class="container">
-      <div class="col-md-6"><a class="btn btn-primary btn-block" href="{{ action('AdminController@newUser', 'estudiante') }}">+ Estudainte</a></div>
+      <div class="col-md-6"><a class="btn btn-primary btn-block" href="{{ action('AdminController@newUser', 'estudiante') }}">+ Estudiante</a></div>
       {!! Form::open(['action' => 'AdminController@postAsignarEstudiante', 'method' => 'POST']) !!}
       <div class="col-md-6">{!! Form::submit('Asignar Curso',['class' => 'btn btn-default btn-block']) !!}</div>
       <div class="col-md-6">{!! Form::select('user_id',['' => '+ Estudiante'] + $estudiantes,'',['class'=>'form-control']) !!}</div>

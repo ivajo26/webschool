@@ -28,14 +28,14 @@ class UserTableSeeder extends Seeder {
 		DB::table('users')->delete();
 
 		User::create([
-			'nombre' => 'Deyby',
-			'apellido' => 'Garcia',
-			'identificacion' => '1067953928',
-			'email' => 'dgarcia@devhunter.co',
+			'nombre' => 'WebSchool',
+			'apellido' => 'Admin',
+			'identificacion' => '123456789',
+			'email' => 'admin@webschool.co',
 			'estado' => true,
-			'password' => bcrypt('deyby123'),
+			'password' => bcrypt('admin123'),
 			'type' => 'admin',
-			'edad' => '18',
+			'edad' => '22',
 			'genero' => 'masculino'
 		]);
 

@@ -1,4 +1,4 @@
-## Laravel PHP Framework
+## WebSchool Project - Laravel Framework 5.0
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
@@ -6,17 +6,61 @@
 [![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
 [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## Implementacion
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+# Nota: la implementacion que se da a continuacion es la configuracion de forma local de la plataforma WebSchool en 
+	Gnu/Linux
 
-## Official Documentation
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
 
-## Contributing
+- Instalar curl 
+	sudo apt-get install php5-curl
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+- Con curl instalar composer
+	curl -sS https://getcomposer.org/installer | php
+
+- Clonar el repositorio
+
+git clone https://github.com/ivajo26/webschool.git
+
+- Ingresar dentro de la carpeta clonada webschool
+
+- Instalar la carpeta vendor
+
+composer install
+
+- Descargar los archivos de la carpeta vendor del repositorio donde se configuro un inicio de sesion personalizado
+
+git pull origin master
+
+- Cambiar el nombre del archivo .env.example por .env y configurar el nombre de la base de datos, usuario y contraseña
+
+- En la terminal vamos a instalar las migraciones 
+
+	- Ingresamos a la carpeta
+		cd webschool/
+
+	- Escribir el siguiente comando
+		php artisan migrate:install
+	
+- Luego realizamos el proceso de migrar todas las tablas a la base de datos ya estipulada
+	
+	php artisan migrate
+
+- Insertamos un dato de ejemplo a la base de datos para poder acceder a la plataforma
+	
+	php artisan db:seed
+
+- Se ha creado un usario admin con la siguiente informacion
+	Identificacion: 123456789
+	Contraseña = admin123
+
+## Integrantes 
+
+	Deyby Stiven Garcia Montes
+	Ivan Jose Diaz Morales
+
+
 
 ### License
 

@@ -9,7 +9,7 @@
 		@include ('Admin.index')
 	@elseif (Auth::user()->type == "docente")
 		@include ('Docente.index')
-	@elseif (Auth::user()->type == "alumno")
-		@include ('Alumno.index')
+	@elseif (Auth::user()->type == "estudiante")
+		{{header('location:/notas')}}
 	@endif
 @endsection
