@@ -13,10 +13,12 @@
 
 
 - Instalar curl 
-	sudo apt-get install php5-curl
+
+sudo apt-get install php5-curl
 
 - Con curl instalar composer
-	curl -sS https://getcomposer.org/installer | php
+
+curl -sS https://getcomposer.org/installer | php
 
 - Clonar el repositorio
 
@@ -51,8 +53,8 @@ git pull origin master
 	php artisan db:seed
 
 - Se ha creado un usario admin con la siguiente informacion
-	Identificacion: 123456789
-	Contraseña = admin123
+	-Identificacion: 123456789
+	-Contraseña = admin123
 
 ## Integrantes 
 
