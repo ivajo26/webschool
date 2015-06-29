@@ -166,8 +166,8 @@ class AdminController extends Controller {
 	}
 
 	public function postUpdateAsignatura($id, AsignaturaUpdateRequest $request){
-		$nombre = $request->input('nombre');
-		Asignatura::where('id',$id)->update(['nombre' => $nombre]);
+		$nombre_asignatura = $request->input('nombre_asignatura');
+		Asignatura::where('id',$id)->update(['nombre_asignatura' => $nombre_asignatura]);
 		return redirect('/asignaturas');
 	}
 
@@ -196,7 +196,7 @@ class AdminController extends Controller {
 
 		if (!$asignaturas->isEmpty()) {
 			foreach ($asignaturas as $key) {
-				$asignaturasA[$key->id] = $key->nombre;
+				$asignaturasA[$key->id] = $key->nombre_asignatura;
 			}
 		}else{
 			$asignaturasA['no_result'] = 'No results';

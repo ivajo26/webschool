@@ -14,7 +14,7 @@
 		<div class="container">
 			{!! Form::model($asignaturas,['method' => 'PATCH', 'action' => ['AdminController@postUpdateAsignatura', $asignaturas->id]]) !!}
 			<div class="col-md-6">
-				{!! Form::text('nombre',null,['class' => 'form-control']) !!}
+				{!! Form::text('nombre_asignatura',null,['class' => 'form-control']) !!}
 			</div>
 			<div class="col-md-6">
 				{!! Form::submit('Actualizar',['class' => 'btn btn-primary btn-block']) !!}

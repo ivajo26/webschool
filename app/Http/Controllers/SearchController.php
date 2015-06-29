@@ -44,7 +44,7 @@ class SearchController extends Controller {
 		$materias = Asignatura::join(
 			'asignacion_docente_asignaturas', 'asignaturas.id', '=' , 'asignacion_docente_asignaturas.asignatura_id'
 		)
-		->where('nombre','LIKE',"%$materia%")
+		->where('nombre_asignatura','LIKE',"%$materia%")
 		->where('docente_id',$id)
 		->get();
 		return view('Docente.searchMaterias',['materias' => $materias]);

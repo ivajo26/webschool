@@ -20,7 +20,7 @@
 			@foreach ($datos as $fila)
 				<tr>
 					<td>{{ $fila->grado_id }}</td>
-					<td>{{ $fila->nombre }}</td>
+					<td>{{ $fila->nombre_asignatura }}</td>
 					{!! Form::open(['action' => 'DocenteController@postCursos']) !!}
 					{!! Form::hidden('materia_grado',$fila->grado_id) !!}
 					{!! Form::hidden('ada_id',$fila->id) !!}

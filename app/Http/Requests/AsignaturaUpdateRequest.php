@@ -22,7 +22,7 @@ class AsignaturaUpdateRequest extends Request {
 	public function rules()
 	{
 		return [
-			'nombre' => 'required'
+			'nombre_asignatura' => 'required'
 		];
 	}
 

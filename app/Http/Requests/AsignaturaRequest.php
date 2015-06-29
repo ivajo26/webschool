@@ -22,7 +22,7 @@ class AsignaturaRequest extends Request {
 	public function rules()
 	{
 		return [
-			'nombre' => 'required|unique:asignaturas|min:5'
+			'nombre_asignatura' => 'required|unique:asignaturas|min:5'
 		];
 	}
 

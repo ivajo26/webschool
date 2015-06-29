@@ -21,7 +21,7 @@
 				<tbbody>
 					@foreach ($asignaturas as $key)
 						<tr>
-							<td>{{ $key->nombre }}</td>
+							<td>{{ $key->nombre_asignatura }}</td>
 							@if ($key->estado)
 								<td>Activo</td>
 							@else
