@@ -1,6 +1,6 @@
 <header>
   <div class="row navbar-main">
-      <div class="col-md-3">
+      <div class="col-md-5">
         <div class="dropdown">
           <button class="btn noti" id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-ellipsis-v fa-1x"></i><span class="badge"></span>
@@ -11,14 +11,14 @@
         </div>
       </div>
       @if (Auth::user()->type == "estudiante")
-        <div class="col-md-6">
+        <div class="col-md-4">
           <div class="navbar-form navbar-left" role="search">
           </div>
         </div>
       @else
-        <div class="col-md-6">
+        <div class="col-md-4">
           <div class="navbar-form navbar-left" role="search">
-            <a href="{{ action('HomeController@index') }}" style="color:white;"  class =" btn fa fa-search fa-2x">Buscar</a>
+            <a href="{{ action('HomeController@index') }}" class =" btn btn-default"><i class="fa fa-search"></i> Buscar</a>
           </div>
         </div>
       @endif
