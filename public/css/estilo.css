@@ -255,29 +255,26 @@ h3{
     padding-top: 0.3em;
     border-color: #706f6f !important;
   }
-/*--Mostrar Info --*/
-
-.panel{
-  border: none !important;
-  background-color: transparent !important;
-  box-shadow: 0px 1px 0px rgb(112, 111, 111) !important;
+/*--Mostrar Info Tabla--*/
+.table{
+  font-size: 1.3em;
 }
 
-.panel-default{
-  border-color: transparent !important;
+.table th, .table td{
   color: #706f6f;
 }
 
-.panel-default > .panel-heading{
-  background-color: none !important;
-  color: #706f6f;
+.table-head{
+  margin-bottom: 30px;
+}
+.table > tbody > tr > th{
+  border-top: none !important;
+  border-bottom: 2px solid #706f6f;
+  font-size: 1.3em;
 }
 
-.panel-heading h3{
-  font-weight: bold;
-  color: #706f6f;
-}
-
-.panel-title h3{
-  margin: 0;
+.table > tbody > tr > td{
+  border-top: none !important;
+  border-bottom: 1px solid #706f6f;
+  margin-bottom: 70px;
 }

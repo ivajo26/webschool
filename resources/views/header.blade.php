@@ -9,17 +9,17 @@
             <li><a href="{{ action('Auth\AuthController@getLogout') }}">Cerrar Sesión</a></li>
           </ul>
         </div>
-      </div>   
+      </div>
       @if (Auth::user()->type == "estudiante")
         <div class="col-md-6">
           <div class="navbar-form navbar-left" role="search">
-          </div> 
+          </div>
         </div>
       @else
         <div class="col-md-6">
           <div class="navbar-form navbar-left" role="search">
             <a href="{{ action('HomeController@index') }}" style="color:white;"  class =" btn fa fa-search fa-2x">Buscar</a>
-          </div> 
+          </div>
         </div>
       @endif
       <div class="col-md-3">

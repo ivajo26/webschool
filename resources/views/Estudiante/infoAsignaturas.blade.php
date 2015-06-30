@@ -12,11 +12,11 @@
 	@include ('header')
 	<div class="container">
 		@if (!$info->isEmpty())
-			<table class="table table-striped table-responsive table-hover">
-				<tr>
-					<td>Asignatura</td>
-					<td>Docente Asignado</td>
-					<td>Email Docente</td>
+			<table class="table table-responsive table-hover">
+				<tr class="table-head">
+					<th>Asignatura</th>
+					<th>Docente Asignado</th>
+					<th>Email Docente</th>
 				</tr>
 				@foreach ($info as $key)
 					<tr>

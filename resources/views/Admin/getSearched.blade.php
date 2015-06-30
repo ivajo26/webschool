@@ -13,12 +13,12 @@
 	<div class="container">
 		<table class="table table-striped table-responsive table-hover">
 			<tr>
-				<td>Identificacion</td>
-				<td>Nombre</td>
-				<td>Apellido</td>
-				<td>Carga</td>
-				<td>Estado</td>
-				<td></td>
+				<th>Identificacion</th>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Carga</th>
+				<th>Estado</th>
+				<th></th>
 			</tr>
 			@foreach ($search as $key)
 				<tr>

@@ -13,9 +13,9 @@
 	<div class="container">
 		<table class="table table-striped table-responsive table-hover ">
 			<tr>
-				<td>Grado</td>
-				<td>Asignatura</td>
-				<td></td>
+				<th>Grado</th>
+				<th>Asignatura</th>
+				<th></th>
 			</tr>
 			@foreach ($datos as $fila)
 				<tr>

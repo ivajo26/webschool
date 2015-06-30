@@ -14,11 +14,11 @@
 		@if (!$materias->isEmpty())
 			<table class="table table-striped table-responsive table-hover">
 				<tr>
-					<td>Asignatura</td>
-					<td>Periodo 1</td>
-					<td>Periodo 2</td>
-					<td>Periodo 3</td>
-					<td>Definitiva</td>
+					<th>Asignatura</th>
+					<th>Periodo 1</th>
+					<th>Periodo 2</th>
+					<th>Periodo 3</th>
+					<th>Definitiva</th>
 				</tr>
 				@foreach ($materias as $key)
 					<tr>

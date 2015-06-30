@@ -15,13 +15,13 @@
 		@if (!$estudiantes->isEmpty())
 			<table class="table table-striped table-responsive table-hover">
 				<tr>
-					<td>Apellido</td>
-					<td>Nombres</td>
-					<td>Periodo</td>
-					<td>Nota</td>
-					<td></td>
+					<th>Apellido</th>
+					<th>Nombres</th>
+					<th>Periodo</th>
+					<th>Nota</th>
+					<th></th>
 				</tr>
-				@foreach ($estudiantes as $fila)			
+				@foreach ($estudiantes as $fila)
 					<tr>
 						<td>{{ $fila->apellido }}</td>
 						<td>{{ $fila->nombre }}</td>

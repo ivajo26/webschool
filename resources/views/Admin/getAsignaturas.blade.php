@@ -14,9 +14,9 @@
 		@if (!$asignaturas->isEmpty())
 			<table class="table table-striped table-responsive table-hover">
 				<tr>
-					<td>Nombre</td>
-					<td>Estado</td>
-					<td></td>
+					<th>Nombre</th>
+					<th>Estado</th>
+					<th></th>
 				</tr>
 				<tbbody>
 					@foreach ($asignaturas as $key)
@@ -36,7 +36,7 @@
 					@endforeach
 				</tbbody>
 			</table>
-		@else 
+		@else
 			<center>
 				<h2>No hay asignaturas</h2>
 			</center>
