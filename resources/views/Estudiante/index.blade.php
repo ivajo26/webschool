@@ -11,7 +11,11 @@
 @section ('content')
 	@include('header')
 	<div class="container">
-		@if (!$materias->isEmpty())
+		@if (isset($error))
+			<center>
+				<h2>No has sido matriculado en ninguna materia aún</h2>
+			</center>
+		@elseif (!$materias->isEmpty())
 			<table class="table table-striped table-responsive table-hover">
 				<tr>
 					<th>Asignatura</th>

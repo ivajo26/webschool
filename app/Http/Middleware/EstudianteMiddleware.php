@@ -1,16 +1,13 @@
 <?php namespace Webschool\Http\Middleware;
 
-use Closure;
 use Illuminate\Contracts\Auth\Guard;
+use Closure;
 
-class Authenticate {
+class EstudianteMiddleware {
 
-	
 	protected $auth;
 
-	
-	public function __construct(Guard $auth)
-	{
+	public function __construct(Guard $auth){
 		$this->auth = $auth;
 	}
 
@@ -28,7 +25,10 @@ class Authenticate {
 			}
 		}
 
+		if ($request->user()->type != "estudiante") {
+			return redirect('/');
+		}
+
 		return $next($request);
 	}
-
 }

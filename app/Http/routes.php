@@ -11,51 +11,72 @@
 |
 */
 
-//------------ Admin Routes ----------------------
 
+// --------------- Home route----------------------
 Route::get('/', 'HomeController@index');
-Route::post('/', 'SearchController@postSearch');
 
-Route::get('/search','SearchController@getSearch');
-Route::post('/search','SearchController@postSearch');
-
-
+// ---------------- Login routes ------------------
 Route::get('/login','Auth\AuthController@getLogin');
 Route::post('/login','Auth\AuthController@postLogin');
+
+// ---------------- Logout route -------------------
 Route::get('/logout','Auth\AuthController@getLogout');
 
-Route::get('/asignar/estudiante','AdminController@asignarEstudiante');
-Route::post('/asignar/estudiante','AdminController@postAsignarEstudiante');
+// ------------------- Admin Middleware ------------
 
-Route::get('/asignar/cargas','AdminController@asignarCargas');
-Route::post('/asignar/cargas','AdminController@postAsignarCargas');
+Route::group(['middleware' => 'Webschool\Http\Middleware\AdminMiddleware'], function()
+{
+	//------------ Admin Routes ----------------------
 
-Route::get('/add/{type}','AdminController@newUser');   
-Route::post('/add/{type}','AdminController@postStoreUser');
-Route::get('/user/{id}/activate','AdminController@activateUser');
-Route::get('/user/{id}/edit','AdminController@editUser');
-Route::patch('/user/{id}/update','AdminController@updateUser');
+	Route::post('/', 'SearchController@postSearch');
 
-Route::get('/asignaturas','AdminController@getAsignatura');
-Route::get('/asignatura/{id}', 'AdminController@activateAsignatura');
-Route::get('/asignatura/{id}/edit','AdminController@editAsignatura');
-Route::patch('/asignatura/{id}/edit','AdminController@postUpdateAsignatura');
+	Route::get('/search','SearchController@getSearch');
+	Route::post('/search','SearchController@postSearch');
 
-Route::get('/nueva/asignatura','AdminController@newAsignatura');   
-Route::post('/nueva/asignatura','AdminController@postNewAsignatura');    
+	Route::get('/asignar/estudiante','AdminController@asignarEstudiante');
+	Route::post('/asignar/estudiante','AdminController@postAsignarEstudiante');
 
-// ------------------ Docente Routes ------------------------------
+	Route::get('/asignar/cargas','AdminController@asignarCargas');
+	Route::post('/asignar/cargas','AdminController@postAsignarCargas');
 
-Route::get('/seleccionar/materias','DocenteController@getCursos');
+	Route::get('/add/{type}','AdminController@newUser');   
+	Route::post('/add/{type}','AdminController@postStoreUser');
+	Route::get('/user/{id}/activate','AdminController@activateUser');
+	Route::get('/user/{id}/edit','AdminController@editUser');
+	Route::patch('/user/{id}/update','AdminController@updateUser');
 
-Route::get('/mostrar/estudiantes','DocenteController@postCursos');
-Route::post('/mostrar/estudiantes','DocenteController@postCursos');
+	Route::get('/asignaturas','AdminController@getAsignatura');
+	Route::get('/asignatura/{id}', 'AdminController@activateAsignatura');
+	Route::get('/asignatura/{id}/edit','AdminController@editAsignatura');
+	Route::patch('/asignatura/{id}/edit','AdminController@postUpdateAsignatura');
 
-Route::post('/registrar/notas','DocenteController@postRegistrarNotas');
+	Route::get('/nueva/asignatura','AdminController@newAsignatura');   
+	Route::post('/nueva/asignatura','AdminController@postNewAsignatura');    
 
-Route::post('/search/asignaturas','SearchController@postMateriaSearch');
+});
 
-// ------------------ Estudiante Routes ------------------------------
+// ------------------- Docente Middleware ------------
 
-Route::get('/notas','EstudianteController@index');
-Route::get('/info/asignaturas', 'EstudianteController@infoAsignaturas');
+Route::group(['middleware' => 'Webschool\Http\Middleware\DocenteMiddleware'], function()
+{
+	// ------------------ Docente Routes ------------------------------
+
+	Route::get('/seleccionar/materias','DocenteController@getCursos');
+
+	Route::get('/mostrar/estudiantes','DocenteController@postCursos');
+	Route::post('/mostrar/estudiantes','DocenteController@postCursos');
+
+	Route::post('/registrar/notas','DocenteController@postRegistrarNotas');
+
+	Route::post('/search/asignaturas','SearchController@postMateriaSearch');
+});
+
+// ------------------- Estudiante Middleware ------------
+
+Route::group(['middleware' => 'Webschool\Http\Middleware\EstudianteMiddleware'], function()
+{
+	// ------------------ Estudiante Routes ------------------------------
+
+	Route::get('/notas','EstudianteController@index');
+	Route::get('/info/asignaturas', 'EstudianteController@infoAsignaturas');
+});

@@ -23,6 +23,7 @@ class DocenteController extends Controller {
 
 	public function __construct(Guard $auth){
 		$this->auth = $auth;
+		$this->middleware('auth');
 	}
 
 	public function getCursos(){

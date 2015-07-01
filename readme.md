@@ -14,25 +14,29 @@
 
 - Instalar curl 
 
-sudo apt-get install php5-curl
+	sudo apt-get install php5-curl
 
 - Con curl instalar composer
 
-curl -sS https://getcomposer.org/installer | php
+	curl -sS https://getcomposer.org/installer | php
 
 - Clonar el repositorio
 
-git clone https://github.com/ivajo26/webschool.git
+	git clone https://github.com/ivajo26/webschool.git
 
 - Ingresar dentro de la carpeta clonada webschool
 
 - Instalar la carpeta vendor
 
-composer install
+	composer install
 
-- Descargar los archivos de la carpeta vendor del repositorio donde se configuro un inicio de sesion personalizado
+- Combinar los archivos del login con los descargados del composer install
 
-git pull origin master
+	git checkout -- .
+	git pull 
+
+- Tambien se puede evitar el paso anterior y hacer
+	composer install && composer update
 
 - Cambiar el nombre del archivo .env.example por .env y configurar el nombre de la base de datos, usuario y contraseña
 

@@ -1,16 +1,13 @@
 <?php namespace Webschool\Http\Middleware;
 
-use Closure;
 use Illuminate\Contracts\Auth\Guard;
+use Closure;
 
-class Authenticate {
+class AdminMiddleware {
 
-	
 	protected $auth;
 
-	
-	public function __construct(Guard $auth)
-	{
+	public function __construct(Guard $auth){
 		$this->auth = $auth;
 	}
 
@@ -26,6 +23,10 @@ class Authenticate {
 			{
 				return redirect()->guest('login');
 			}
+		}
+
+		if ($request->user()->type != "admin") {
+			return redirect('/');
 		}
 
 		return $next($request);

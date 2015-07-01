@@ -18,6 +18,7 @@ class EstudianteController extends Controller {
 
 	public function __construct(Guard $auth){
 		$this->auth = $auth;
+		$this->middleware('auth');
 	}
 
 	public function index(){
@@ -30,25 +31,30 @@ class EstudianteController extends Controller {
 		->where('user_id',$id)
 		->first();
 
-		$grado = $user->grado_id;
+		if (!$user) {
+			return view('Estudiante.index',['error' => true]);
+		}else{
 
-		$materias = Asignatura::join(
-			'asignacion_docente_asignaturas','asignaturas.id','=','asignacion_docente_asignaturas.asignatura_id'
-		)
-		->join(
-			'notas','asignacion_docente_asignaturas.id','=','notas.ada_id'
-		)
-		->where('grado_id',$grado)
-		->get();
+			$grado = $user->grado_id;
 
-		if ($materias->isEmpty()) {
 			$materias = Asignatura::join(
 				'asignacion_docente_asignaturas','asignaturas.id','=','asignacion_docente_asignaturas.asignatura_id'
 			)
+			->join(
+				'notas','asignacion_docente_asignaturas.id','=','notas.ada_id'
+			)
+			->where('grado_id',$grado)
 			->get();
-		}
 
-		return view('Estudiante.index',['materias' => $materias]);
+			if ($materias->isEmpty()) {
+				$materias = Asignatura::join(
+					'asignacion_docente_asignaturas','asignaturas.id','=','asignacion_docente_asignaturas.asignatura_id'
+				)
+				->get();
+			}
+
+			return view('Estudiante.index',['materias' => $materias]);
+		}
 	}
 
 	public function infoAsignaturas(){
