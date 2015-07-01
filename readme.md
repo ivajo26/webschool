@@ -32,8 +32,7 @@
 
 - Combinar los archivos del login con los descargados del composer install
 
-	git checkout -- .
-	git pull 
+	git checkout -- . && git pull 
 
 - Tambien se puede evitar el paso anterior y hacer
 	composer install && composer update
